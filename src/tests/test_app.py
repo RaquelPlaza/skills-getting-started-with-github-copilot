@@ -5,7 +5,7 @@ import copy
 
 @pytest.fixture
 def client():
-    return TestClient(app, allow_redirects=False)
+    return TestClient(app, follow_redirects=False)
 
 @pytest.fixture(autouse=True)
 def reset_activities():
