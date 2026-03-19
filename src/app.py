@@ -9,6 +9,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 import os
+import copy
 from pathlib import Path
 
 app = FastAPI(title="Mergington High School API",
@@ -76,6 +77,8 @@ activities = {
         "participants": ["zara@mergington.edu", "noah@mergington.edu"]
     }
 }
+
+initial_activities = copy.deepcopy(activities)
 
 
 @app.get("/")
